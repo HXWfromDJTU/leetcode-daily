@@ -33,8 +33,10 @@
  * 
  * 注意:
  * 
- * 假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。请根据这个假设，如果反转后整数溢出那么就返回
- * 0。
+ * 假设我们的环境只能存储得下 32 位的有符号整数，
+ * 则其数值范围为 [−2^31,  2^31 − 1]。
+ * 请根据这个假设，
+ * 如果反转后整数溢出那么就返回 0。
  * 
  */
 /**
@@ -42,13 +44,13 @@
  * @return {number}
  */
 var reverse = function (x) {
-    if (typeof x !== 'number') return 0;
     var symbol = x < 0 ? '-' : '';
     x = Math.abs(x); // 处理为正数 
     var result = "" + x;
     result = result.split('').reverse().join('');
     result = Number(symbol + result);
-    if (result > 2e31 || result < -2e31) {
+    // 过滤溢出数字
+    if (result > Math.pow(2, 31) || result < -Math.pow(2, 31)) {
         return 0;
     }
     return result;
