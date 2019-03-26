@@ -30,13 +30,18 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-    var len = nums.length;
-    for (var i = 0; i < len - 1; i++) {
-        for (var j = i + 1; j < len; j++) {
-            if (nums[i] + nums[j] === target) {
-                return [i, j];
+        var len = nums.length;
+        var numMap = {};
+        // 将整个数组存放到map中，key为value，value为位置号
+        for(var k=1;k<len;k++){
+            numMap[nums[k]] = k;
+        }
+        // 在map中查找另一半
+        for (var i = 0; i < len - 1; i++) {
+            var gap = target - nums[i];
+            if(numMap[gap]>=0 && numMap[gap]!==i){
+                return [i,numMap[gap]];
             }
         }
-    }
 };
 
