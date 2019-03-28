@@ -32,7 +32,7 @@
 var twoSum = function (nums, target) {
         var len = nums.length;
         var numMap = {};
-        // 将整个数组存放到map中，key为value，value为位置号
+        // 将整个数组存放到map中，key为value，value为位置号    
         for(var k=1;k<len;k++){
             numMap[nums[k]] = k;
         }
