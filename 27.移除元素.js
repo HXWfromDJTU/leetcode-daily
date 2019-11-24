@@ -16,7 +16,7 @@ var removeElement = function(nums, val) {
     for(; i<nums.length; i++) {
         // 找到顺序的第一个
         if (nums[i] === val) {
-           for(j= j>i ? j + 1 : i + 1; j<nums.length; j++) {
+           for(j= j>i ? j+1 : i+1; j<nums.length; j++) {
                // 找到第一个不等于目标值的数
                if (nums[j] !== val) {
                     // 后者覆盖前者
