@@ -26,11 +26,12 @@ const reverseList = function(head) {
     return prev
 };
 ```
-          
+
 ### 反转相邻节点
 
 [24] Swap Nodes In Pairs
 
 原题[连接](https://leetcode-cn.com/problems/swap-nodes-in-pairs/)
 
-
+##### 解题关键
+* 
