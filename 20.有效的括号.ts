@@ -32,7 +32,7 @@ function isValid(s: string): boolean {
             }
         }
     }
-    // 最后判断栈中是否还有遗留
+    // 最后判断栈中是否还有
     return stack.length === 0
 };
 // @lc code=end
