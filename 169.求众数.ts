@@ -32,8 +32,12 @@
  *
  */
 
-// @lc code=start
-function majorityElement(nums: number[]): number {
+// 使用Map结构
+/**
+ * 时间复杂度 O(n)
+ * 空间复杂度 O(n)
+ */
+function majorityElement (nums: number[]): number {
     const recorder = {}
     nums.forEach(nums => {
         if (recorder[nums]) {
@@ -54,5 +58,15 @@ function majorityElement(nums: number[]): number {
 
     return majorityNum
 };
-// @lc code=end
+
+// 
+/**
+ * 使用排序，得出的结果众数题目规定是超过 1/2 ，所以中位数肯定就为众数
+ * 时间复杂度 O(n * logN)
+ * 空间复杂度 O(1)
+ */
+function majorityElement2 (nums: number[]): number {
+    nums.sort()
+    return nums[Math.floor(nums.length / 2)]
+};// @lc code=end
 
