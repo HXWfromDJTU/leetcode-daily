@@ -60,10 +60,38 @@ function myPow(x: number, n: number): number {
 
     // 偶数
     if (n % 2 === 0) {
-        // 此处为何不可写为 myPow(x, n/2) * myPow(x, n/2) ？
+        /**
+         * 此处写作 myPow(x, n/2) * myPow(x, n/2) 其实更好理解
+         * 但容易出现超时的情况
+         * 
+         * 遇到偶数的情况，把 n 减半，底数部分多乘一个 x,也就实现了指数部分 * 2 的效果
+         * 但同时，减少了递归次数，可能可以避免某些做题系统中的超时问题
+         * 
+         * */ 
         return myPow(x * x, n/2)
     }
 
 };
+
+
+
+/**
+ * 另外写一个暴力递归的方法
+ */
+function myPow2(x: number, n: number): number {
+    if (n === 0) return 1
+    if (n === 1) return x
+
+    if (n < 0 ) return myPow2(x, -n)
+
+    let res = 1
+
+    for (let i = 0; i < n; i ++) {
+        res = res * x
+    }
+    
+    return res
+};
+
 // @lc code=end
 
