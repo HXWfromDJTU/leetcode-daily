@@ -47,6 +47,12 @@ function maxProfit(prices: number[]): number {
     // 当可操作性日小于2的时候，没有利润可图
     if (prices.length < 2) return 0
 
+
+    /**
+     * 注意这里有一个误区
+     * 一定不能够 去找所有天数中的最低价格 和 最高价格之差，然后粗暴的判断是否符合“先买后卖”
+     * 而是站在每天来看，最小的价格是多少(判断是否买)，最大利润是多少(判断是否卖)
+     */
     let maxProfitVal = 0
     let minPrice = Infinity
     
