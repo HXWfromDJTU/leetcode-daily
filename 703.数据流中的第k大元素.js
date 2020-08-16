@@ -46,14 +46,22 @@ class KthLargest {
     }
 
     add(val) {
-        this.kArr.push(val)
-    
-        if (this.kArr[this.k - 1] < val) {
-            this.kArr.sort((a, b) => b - a)
+        // 初始插入位置为末尾
+        let insertpPos = this.kArr.length
+
+        // 遍历找到按照大小排序中，应该插入的位置
+        // 此处的寻找插入位置，也代替了数组重新排序的必要
+        for (let i = 0; i < insertpPos; i++) {
+            if (val >= this.kArr[i]) {
+                insertpPos = i
+                break
+            }
         }
+        
+        // 将新增加元素插入对应位置
+        this.kArr.splice(insertpPos, 0, val)
 
-        this.kArr.pop()
-
+        // 返回第K大元素
         return this.kArr[this.k - 1]
     }
 }
