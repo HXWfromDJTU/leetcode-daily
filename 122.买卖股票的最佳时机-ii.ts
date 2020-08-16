@@ -56,9 +56,24 @@
  * 
  */
 
-// @lc code=start
-function maxProfit(prices: number[]): number {
-    
+/**
+ * Greddy
+ * 
+ */
+function maxProfit (prices: number[]): number {
+    // 没有操作时间的时候，直接返回0
+    if (prices.length <= 1) return 0
+
+    let maxProfitVal = 0 // 最高利润值
+
+    prices.forEach((todayPrice, index)=> {
+        // 今日价格比昨天的高，有操作空间
+        if (todayPrice > prices[index - 1]) {
+            maxProfitVal += (todayPrice - prices[index - 1])
+        }
+    })
+
+    return maxProfitVal
 };
 // @lc code=end
 
