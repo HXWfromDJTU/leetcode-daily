@@ -58,5 +58,10 @@
 | 序号 | 名称 | 题解 |
 | --- | --- | --- |
 | [leetcode 20] | [有效的括号](https://leetcode-cn.com/problems/valid-parentheses/submissions/)  | [题解](/question/valid-parentheses/index.ts) |
+| [leetcode 703] | [数据流中第K大元素](https://leetcode-cn.com/problems/valid-parentheses/submissions/)  | [简单排序](/question/valid-parentheses/index.ts) |
+
+实现一个小顶堆
+
+滑动窗口中的最大值(高频)
 
  
