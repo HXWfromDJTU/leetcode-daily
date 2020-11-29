@@ -1,6 +1,4 @@
 // 使用递归方法，进行树的遍历 
-
-
 function inorderTraversal(root) {
     if (!root) return []
 
@@ -77,9 +75,7 @@ function postorderTraversal(root) {
             // 避免重复查找
             if (root && root.left) {
                 root.left = null
-            }
-
-            if (root && root.right) {
+            } else if (root && root.right) {
                 root.right = null
             }
         }
