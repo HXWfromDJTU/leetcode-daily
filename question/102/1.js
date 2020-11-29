@@ -6,6 +6,7 @@ function levelOrder(root: TreeNode | null): number[][] {
     const resArr = []
     let currLevel = 0
     const nodeStack = [root]
+    const visitedSet = new Set()
 
     // 核心思想是使用双端队列，新增子节点push进去，当前要处理的节点shift出来
 
@@ -18,6 +19,10 @@ function levelOrder(root: TreeNode | null): number[][] {
         // 内层循环处理同层级节点
         while (numsTobeHandleCurrLevel--) {
             const currNode = nodeStack.shift() // 从头端取出节点
+
+            if (visitedSet.has(currNode)) continue // 若已处理则跳过
+
+            visitedSet.add(currNode) // 加入去重集合
             resArr[currLevel].push(currNode.val) // 记录当前节点值
 
             // 存入下一层节点
