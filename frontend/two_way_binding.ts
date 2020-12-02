@@ -1,6 +1,5 @@
 class Observer {
     private dep: Dep
-
     constructor(data) {
         this.dep = new Dep()
 
@@ -9,7 +8,7 @@ class Observer {
                 new Observer(data[key])
             }
 
-            Object.defineProperty(data, key, {
+           Object.defineProperty(data, key, {
                 configurable: true,
                 enumerable: true,
                 get() {
@@ -22,6 +21,14 @@ class Observer {
                 set(newVal) {
                     this.dep.notify() // 通知更新
                     this.value = newVal
+                }
+            })
+
+            Object.defineProperty(data, '_ob_', {
+                configurable: true,
+                enumerable: false,
+                get () {
+                    return this
                 }
             })
         })
@@ -52,12 +59,12 @@ class Watcher {
 
     constructor(renderFun) {
         this.update()
-        this.renderFun
+        this.renderFun = renderFun
     }
 
     update() {
         Dep.target = this
-        this.renderFun()
+        this.renderFun() // 渲染节点，touch数据
         Dep.target = null
     }
 }
