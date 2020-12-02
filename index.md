@@ -74,10 +74,10 @@
 * leetcode 70题
 
 #### 手写
-* 实现原生ajax
-* call、aplly、bind 实现
-* new 实现
-* class 实现继承
+* 实现原生ajax ✅
+* call、aplly、bind 实现 ✅
+* new 实现 ✅
+* class 实现继承 ✅
 * async/await 实现
 * reduce 实现
 * 实现一个双向数据绑定
