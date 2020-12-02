@@ -55,7 +55,7 @@ class TreeNode {
          }
 }
 
-function levelOrder(root: TreeNode | null): number[][] {
+function levelOrder(root){
     // 边界条件
     if (!root) return []
 
