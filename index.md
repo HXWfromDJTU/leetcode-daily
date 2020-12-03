@@ -80,13 +80,13 @@
 * class 实现继承 ✅
 * async/await 实现
 * reduce 实现
-* 实现一个双向数据绑定
-* instanceof 实现
+* 实现一个双向数据绑定 ✅
+* instanceof 实现 ✅
 * Array.isArray 实现
-* Object.create 的基本实现原理
+* Object.create 的基本实现原理 ✅
 * getOwnPropertyNames 实现
-* promise 实现
-* 手写一个防抖/节流函数
+* promise 实现 <====== 暂未实现 ❌ 
+* 手写一个防抖/节流函数 
 * 柯里化函数的实现
 * 手写一个深拷贝
 * 如何提升移动端用户的使用体验，让用户能更快的看到页面
