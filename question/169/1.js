@@ -1,11 +1,10 @@
 function majorityElement (nums) {
     const countMap = {}
     nums.forEach(num => {
-        const curr = countMap[num]
-        if (curr) {
-            curr++
+        if (countMap[num]) {
+            countMap[num]++
         } else {
-            curr = 1
+            countMap[num] = 1
         }
     })
 
