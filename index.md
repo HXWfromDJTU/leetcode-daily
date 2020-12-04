@@ -84,7 +84,7 @@
 * instanceof 实现 ✅
 * Array.isArray 实现
 * Object.create 的基本实现原理 ✅
-* getOwnPropertyNames 实现
+* getOwnPropertyNames 
 * promise 实现 <====== 暂未实现 ❌ 
 * 手写一个防抖/节流函数 ✅
 * 柯里化函数的实现
@@ -97,13 +97,12 @@
   * 有一个有一百万个url的数组，如何从这一百万个url里获得资源
 * 手写一个观察者模式 和 pubsub 模式  ✅
 * 实现一个sleep函数 ✅
-* 写出一个正则匹配出图片的后缀,匹配以.jpg或者.png结尾的链接
-* 实现加法函数使得sum(2)(3)和sum(2,3)都输出5
-* 用Promise实现post请求
+* 写出一个正则匹配出图片的后缀,匹配以.jpg或者.png结尾的链接 ✅
+* 实现加法函数使得sum(2)(3)和sum(2,3)都输出5 
 * 用vue设计下拉框组件。可用<select :options="options" @change="handleChange">调用 
 * 编写一个js的render渲染函数 
-* 任务队列的设计(发布订阅模式的设计)
-* 手写jsonp的实现原理
+* 设计一个简单的任务队列，要求分别在 1,3,4 秒后打印出 “1”, “2”, “3” 
+* 手写jsonp的实现原理 ✅
 
 
 
