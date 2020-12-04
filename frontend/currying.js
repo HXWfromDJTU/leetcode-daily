@@ -1,9 +1,2 @@
-function currying (func){
-    var total = 0
-
-    return function () {
-        total
-    }
-}
-
-function 
+// sum(2)(3) = 5
+// sum(2, 3) = 5
