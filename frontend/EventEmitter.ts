@@ -1,3 +1,4 @@
+// 发布订阅模式， EventEmitter 模式，着重于 proxy
 class MyEventEmitter {
     eventMap: Map<any, any> = new Map()
 
@@ -57,3 +58,45 @@ console.log('======== 取消了赛车 ========')
 eventBus.off('monday', race)
 
 eventBus.trigger('monday')
+
+
+// 观察者模式 ====> 订阅者 和 被观察者 直接接触
+class Obsever {
+    cb: Function
+
+    constructor (callback: Function) {
+        this.cb = callback
+    }
+
+    update () {
+        this.cb()
+    }
+}
+
+class Subject {
+    observerList: Obsever[]
+
+    constructor () {
+        this.observerList = []
+    }
+
+    addObserver (obsever: Obsever) {
+        this.observerList.push(obsever)
+    }
+
+    notify () {
+        this.observerList.forEach(obsever => {
+            obsever.update()
+        })
+    }
+}
+
+const obs = new Obsever(() => {
+    console.log('updated....')
+})
+
+const sub = new Subject()
+
+sub.addObserver(obs)
+
+sub.notify()

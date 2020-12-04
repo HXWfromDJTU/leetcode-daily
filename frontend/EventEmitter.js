@@ -44,3 +44,30 @@ eventBus.trigger('monday');
 console.log('======== 取消了赛车 ========');
 eventBus.off('monday', race);
 eventBus.trigger('monday');
+class Obsever {
+    constructor(callback) {
+        this.cb = callback;
+    }
+    update() {
+        this.cb();
+    }
+}
+class Subject {
+    constructor() {
+        this.observerList = [];
+    }
+    addObserver(obsever) {
+        this.observerList.push(obsever);
+    }
+    notify() {
+        this.observerList.forEach(obsever => {
+            obsever.update();
+        });
+    }
+}
+const obs = new Obsever(() => {
+    console.log('updated....');
+});
+const sub = new Subject();
+sub.addObserver(obs);
+sub.notify();
